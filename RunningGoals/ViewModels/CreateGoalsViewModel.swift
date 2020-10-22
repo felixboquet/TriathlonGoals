@@ -9,10 +9,60 @@ import SwiftUI
 
 
 final class CreateGoalsViewModel: ObservableObject {
+   
+    var navigationBarTitle = "Créer un objectif"
+    
     @Published var dropdowns: [GoalPartViewModel] = [
         .init(type: .activity),
         .init(type: .unit)
     ]
+    
+    enum Action {
+        case selectOption(index: Int)
+    }
+    
+    var hasSelectedDropdown: Bool {
+        selectedDropdownIndex != nil
+    }
+    
+    var selectedDropdownIndex: Int? {
+        dropdowns.enumerated().first(where: { $0.element.isSelected })?.offset
+    }
+    
+    var displayedOptions: [DropdownOption] {
+        guard let index = selectedDropdownIndex else {
+            return []
+        }
+        return dropdowns[index].options
+    }
+    
+    func send(action: Action) {
+        switch action {
+        case let .selectOption(index):
+            guard let selectedDropdownIndex = selectedDropdownIndex else {
+                return
+            }
+            clearSelectedOption()
+            dropdowns[selectedDropdownIndex].options[index].isSelected = true
+            clearSelectedDropdown()
+        }
+    }
+    
+    func clearSelectedOption() {
+        guard let selectedDropdownIndex = selectedDropdownIndex else {
+            return
+        }
+        dropdowns[selectedDropdownIndex].options.indices.forEach { index in
+            dropdowns[selectedDropdownIndex].options[index].isSelected = false
+        }
+    }
+    
+    func clearSelectedDropdown() {
+        guard let selectedDropdownIndex = selectedDropdownIndex else {
+            return
+        }
+        dropdowns[selectedDropdownIndex].isSelected = false
+    }
 }
 
 extension CreateGoalsViewModel {

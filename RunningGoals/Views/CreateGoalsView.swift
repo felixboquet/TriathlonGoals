@@ -19,6 +19,16 @@ struct CreateGoalsView: View {
         }
     }
     
+    var actionSheet: ActionSheet {
+        ActionSheet(title: Text("Select"),
+                    buttons: viewModel.displayedOptions.indices.map { index in
+                        let option = viewModel.displayedOptions[index]
+                        return .default(Text(option.formatted)) {
+                            viewModel.send(action: .selectOption(index: index))
+                        }
+                    })
+    }
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -35,7 +45,14 @@ struct CreateGoalsView: View {
                             .font(.system(size: 24, weight: .medium))
                     }
                 }
-            }.navigationBarTitle("Créer un objectif")
+            }
+            .actionSheet(isPresented: Binding<Bool>(get: {
+                viewModel.hasSelectedDropdown
+            }, set: { _ in })
+            ) {
+                actionSheet
+            }
+            .navigationBarTitle(viewModel.navigationBarTitle)
             .padding(.bottom, 16)
         }
     }

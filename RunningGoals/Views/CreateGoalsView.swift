@@ -9,15 +9,21 @@ import SwiftUI
 
 struct CreateGoalsView: View {
     
+    @StateObject var viewModel = CreateGoalsViewModel()
     @State private var isActive = false
+    @State private var text = ""
+    
+    var dropdownList: some View {
+        ForEach(viewModel.dropdowns.indices, id: \.self) { index in
+            DropDownView(viewModel: $viewModel.dropdowns[index])
+        }
+    }
     
     var body: some View {
         ScrollView {
             VStack {
-                DropDownView()
-                DropDownView()
-                DropDownView()
-                DropDownView()
+                dropdownList
+                PrimaryTextFieldView(headerTitle: "Distance (km)", value: $text)
                 Spacer()
                 NavigationLink(
                     destination: ReminderView(),

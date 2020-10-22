@@ -14,7 +14,7 @@ struct ReminderView: View {
     var body: some View {
         VStack {
             Spacer()
-            DropDownView()
+//            DropDownView()
             Spacer()
             Button(action: {
                 isActive = true

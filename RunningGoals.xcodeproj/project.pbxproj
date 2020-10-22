@@ -17,6 +17,10 @@
 		939218A225417A6000E5ADE9 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218A125417A6000E5ADE9 /* DropDownView.swift */; };
 		939218A52541816F00E5ADE9 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218A42541816F00E5ADE9 /* ReminderView.swift */; };
 		939218A925418E8E00E5ADE9 /* CreateGoalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218A825418E8E00E5ADE9 /* CreateGoalsViewModel.swift */; };
+		939218AC2541A09000E5ADE9 /* DropdownItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218AB2541A09000E5ADE9 /* DropdownItemProtocol.swift */; };
+		939218B82541BDA900E5ADE9 /* PrimaryTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218B72541BDA900E5ADE9 /* PrimaryTextFieldStyle.swift */; };
+		939218BC2541C61F00E5ADE9 /* PrimaryTextFieldProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218BB2541C61F00E5ADE9 /* PrimaryTextFieldProtocol.swift */; };
+		939218BF2541C66E00E5ADE9 /* PrimaryTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218BE2541C66E00E5ADE9 /* PrimaryTextFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		939218A125417A6000E5ADE9 /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
 		939218A42541816F00E5ADE9 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 		939218A825418E8E00E5ADE9 /* CreateGoalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalsViewModel.swift; sourceTree = "<group>"; };
+		939218AB2541A09000E5ADE9 /* DropdownItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownItemProtocol.swift; sourceTree = "<group>"; };
+		939218B72541BDA900E5ADE9 /* PrimaryTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextFieldStyle.swift; sourceTree = "<group>"; };
+		939218BB2541C61F00E5ADE9 /* PrimaryTextFieldProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextFieldProtocol.swift; sourceTree = "<group>"; };
+		939218BE2541C66E00E5ADE9 /* PrimaryTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,7 @@
 				9392189D254177EC00E5ADE9 /* CreateGoalsView.swift */,
 				939218832541657300E5ADE9 /* LandingView.swift */,
 				939218A42541816F00E5ADE9 /* ReminderView.swift */,
+				939218B62541BD9600E5ADE9 /* Styles */,
 				93921899254170F500E5ADE9 /* Widgets */,
 			);
 			path = Views;
@@ -105,8 +114,8 @@
 		93921899254170F500E5ADE9 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
-				9392189125416E3000E5ADE9 /* PrimaryButtonStyle.swift */,
 				939218A125417A6000E5ADE9 /* DropDownView.swift */,
+				939218BE2541C66E00E5ADE9 /* PrimaryTextFieldView.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -115,8 +124,19 @@
 			isa = PBXGroup;
 			children = (
 				939218A825418E8E00E5ADE9 /* CreateGoalsViewModel.swift */,
+				939218AB2541A09000E5ADE9 /* DropdownItemProtocol.swift */,
+				939218BB2541C61F00E5ADE9 /* PrimaryTextFieldProtocol.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		939218B62541BD9600E5ADE9 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				9392189125416E3000E5ADE9 /* PrimaryButtonStyle.swift */,
+				939218B72541BDA900E5ADE9 /* PrimaryTextFieldStyle.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,11 +208,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				939218B82541BDA900E5ADE9 /* PrimaryTextFieldStyle.swift in Sources */,
 				9392189225416E3000E5ADE9 /* PrimaryButtonStyle.swift in Sources */,
 				9392189E254177EC00E5ADE9 /* CreateGoalsView.swift in Sources */,
 				939218842541657300E5ADE9 /* LandingView.swift in Sources */,
+				939218AC2541A09000E5ADE9 /* DropdownItemProtocol.swift in Sources */,
 				939218A925418E8E00E5ADE9 /* CreateGoalsViewModel.swift in Sources */,
+				939218BF2541C66E00E5ADE9 /* PrimaryTextFieldView.swift in Sources */,
 				939218A52541816F00E5ADE9 /* ReminderView.swift in Sources */,
+				939218BC2541C61F00E5ADE9 /* PrimaryTextFieldProtocol.swift in Sources */,
 				939218822541657300E5ADE9 /* RunningGoalsApp.swift in Sources */,
 				9392189625416F4400E5ADE9 /* Color+Extensions.swift in Sources */,
 				939218A225417A6000E5ADE9 /* DropDownView.swift in Sources */,

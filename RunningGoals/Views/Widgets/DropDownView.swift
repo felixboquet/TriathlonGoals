@@ -7,18 +7,22 @@
 
 import SwiftUI
 
-struct DropDownView: View {
+struct DropDownView<T: DropdownItemProtocol>: View {
+    
+    @Binding var viewModel: T
     
     var body: some View {
         VStack {
             HStack {
-                Text("Exercice")
+                Text(viewModel.headerTitle)
                     .font(.system(size: 22, weight: .semibold))
                 Spacer()
             }.padding(.vertical, 8)
-            Button(action: {}) {
+            Button(action: {
+                viewModel.isSelected = true
+            }) {
                 HStack {
-                    Text("Course à pieds")
+                    Text(viewModel.dropdownTitle)
                         .font(.system(size: 28, weight: .semibold))
                     Spacer()
                     Image(systemName: "arrowtriangle.down.circle")
@@ -30,14 +34,14 @@ struct DropDownView: View {
     
 }
 
-struct DropDownView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            DropDownView()
-        }.environment(\.colorScheme, .light)
-        
-        NavigationView {
-            DropDownView()
-        }.environment(\.colorScheme, .dark)
-    }
-}
+//struct DropDownView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationView {
+//            DropDownView()
+//        }.environment(\.colorScheme, .light)
+//        
+//        NavigationView {
+//            DropDownView()
+//        }.environment(\.colorScheme, .dark)
+//    }
+//}

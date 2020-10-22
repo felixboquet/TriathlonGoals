@@ -16,6 +16,7 @@
 		9392189E254177EC00E5ADE9 /* CreateGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9392189D254177EC00E5ADE9 /* CreateGoalsView.swift */; };
 		939218A225417A6000E5ADE9 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218A125417A6000E5ADE9 /* DropDownView.swift */; };
 		939218A52541816F00E5ADE9 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218A42541816F00E5ADE9 /* ReminderView.swift */; };
+		939218A925418E8E00E5ADE9 /* CreateGoalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218A825418E8E00E5ADE9 /* CreateGoalsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9392189D254177EC00E5ADE9 /* CreateGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalsView.swift; sourceTree = "<group>"; };
 		939218A125417A6000E5ADE9 /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
 		939218A42541816F00E5ADE9 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
+		939218A825418E8E00E5ADE9 /* CreateGoalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		9392189B254175A300E5ADE9 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				939218A825418E8E00E5ADE9 /* CreateGoalsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				9392189225416E3000E5ADE9 /* PrimaryButtonStyle.swift in Sources */,
 				9392189E254177EC00E5ADE9 /* CreateGoalsView.swift in Sources */,
 				939218842541657300E5ADE9 /* LandingView.swift in Sources */,
+				939218A925418E8E00E5ADE9 /* CreateGoalsViewModel.swift in Sources */,
 				939218A52541816F00E5ADE9 /* ReminderView.swift in Sources */,
 				939218822541657300E5ADE9 /* RunningGoalsApp.swift in Sources */,
 				9392189625416F4400E5ADE9 /* Color+Extensions.swift in Sources */,

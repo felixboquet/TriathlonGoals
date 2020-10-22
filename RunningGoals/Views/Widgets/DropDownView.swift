@@ -1,0 +1,43 @@
+//
+//  DropDownView.swift
+//  RunningGoals
+//
+//  Created by Féfé on 22/10/2020.
+//
+
+import SwiftUI
+
+struct DropDownView: View {
+    
+    var body: some View {
+        VStack {
+            HStack {
+                Text("Exercice")
+                    .font(.system(size: 22, weight: .semibold))
+                Spacer()
+            }.padding(.vertical, 8)
+            Button(action: {}) {
+                HStack {
+                    Text("Course à pieds")
+                        .font(.system(size: 28, weight: .semibold))
+                    Spacer()
+                    Image(systemName: "arrowtriangle.down.circle")
+                        .font(.system(size: 24, weight: .medium))
+                }
+            }.buttonStyle(PrimaryButtonStyle(fillColor: .primaryButton))
+        }.padding(20)
+    }
+    
+}
+
+struct DropDownView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            DropDownView()
+        }.environment(\.colorScheme, .light)
+        
+        NavigationView {
+            DropDownView()
+        }.environment(\.colorScheme, .dark)
+    }
+}

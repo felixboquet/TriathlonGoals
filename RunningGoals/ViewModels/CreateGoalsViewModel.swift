@@ -18,32 +18,57 @@ final class CreateGoalsViewModel: ObservableObject {
     @Published var unitDropdown = GoalPartViewModel(type: .unit)
     
     private let userService: UserServiceProtocol
+    private let goalService: GoalServiceProtocol
     private var cancellables: [AnyCancellable] = []
     
     enum Action {
         case createGoal
     }
     
-    init(userService: UserServiceProtocol = UserService()) {
+    init(
+        userService: UserServiceProtocol = UserService(),
+        goalService: GoalServiceProtocol = GoalService()
+    ) {
         self.userService = userService
+        self.goalService = goalService
     }
     
     func send(action: Action) {
         switch action {
         
         case .createGoal:
-            getCurrentUserId().sink { completion in
+            getCurrentUserId().flatMap { userId -> AnyPublisher<Void, Error> in
+                return self.createGoal(userId: userId)
+            }.sink { completion in
                 switch completion {
                 case let .failure(error):
                     print(error.localizedDescription)
                 case .finished:
                     print("Finished")
                 }
-            } receiveValue: { userId in
-                print("Found user id : \(userId)")
+            } receiveValue: { _ in
+                print("Success")
             }.store(in: &cancellables)
 
         }
+    }
+    
+    private func createGoal(userId: UserId) -> AnyPublisher<Void, Error> {
+        guard let activity = activityDropdown.text,
+              let unit = unitDropdown.text else {
+            return Fail(error: NSError()).eraseToAnyPublisher()
+        }
+        
+        let goal = Goal(
+            activity: activity,
+            distance: 10,
+            time: 1,
+            unit: unit,
+            userId: userId,
+            startDate: Date()
+        )
+        
+        return goalService.create(goal).eraseToAnyPublisher()
     }
     
     private func getCurrentUserId() -> AnyPublisher<UserId, Error> {
@@ -121,5 +146,14 @@ extension CreateGoalsViewModel {
             }
         }
         
+    }
+}
+
+extension CreateGoalsViewModel.GoalPartViewModel {
+    var text: String? {
+        if case let .text(text) = selectedOption.type {
+            return text
+        }
+        return nil
     }
 }

@@ -6,7 +6,9 @@
 //
 
 import SwiftUI
+import Combine
 
+typealias UserId = String
 
 final class CreateGoalsViewModel: ObservableObject {
    
@@ -17,8 +19,12 @@ final class CreateGoalsViewModel: ObservableObject {
         .init(type: .unit)
     ]
     
+    private let userService: UserServiceProtocol
+    private var cancellables: [AnyCancellable] = []
+    
     enum Action {
         case selectOption(index: Int)
+        case createGoal
     }
     
     var hasSelectedDropdown: Bool {
@@ -36,6 +42,10 @@ final class CreateGoalsViewModel: ObservableObject {
         return dropdowns[index].options
     }
     
+    init(userService: UserServiceProtocol = UserService()) {
+        self.userService = userService
+    }
+    
     func send(action: Action) {
         switch action {
         case let .selectOption(index):
@@ -45,6 +55,19 @@ final class CreateGoalsViewModel: ObservableObject {
             clearSelectedOption()
             dropdowns[selectedDropdownIndex].options[index].isSelected = true
             clearSelectedDropdown()
+            
+        case .createGoal:
+            getCurrentUserId().sink { completion in
+                switch completion {
+                case let .failure(error):
+                    print(error.localizedDescription)
+                case .finished:
+                    print("Finished")
+                }
+            } receiveValue: { userId in
+                print("Found user id : \(userId)")
+            }.store(in: &cancellables)
+
         }
     }
     
@@ -62,6 +85,20 @@ final class CreateGoalsViewModel: ObservableObject {
             return
         }
         dropdowns[selectedDropdownIndex].isSelected = false
+    }
+    
+    private func getCurrentUserId() -> AnyPublisher<UserId, Error> {
+        return userService.getCurrentUser().flatMap { user -> AnyPublisher<UserId, Error> in
+            if let userId = user?.uid {
+                return Just(userId)
+                    .setFailureType(to: Error.self)
+                    .eraseToAnyPublisher()
+            } else {
+                return self.userService.signInAnonymously()
+                    .map { $0.uid }
+                    .eraseToAnyPublisher()
+            }
+        }.eraseToAnyPublisher()
     }
 }
 

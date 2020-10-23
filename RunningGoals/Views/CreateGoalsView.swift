@@ -13,19 +13,10 @@ struct CreateGoalsView: View {
     @State private var text = ""
     
     var dropdownList: some View {
-        ForEach(viewModel.dropdowns.indices, id: \.self) { index in
-            DropDownView(viewModel: $viewModel.dropdowns[index])
+        Group {
+            DropDownView(viewModel: $viewModel.activityDropdown)
+            DropDownView(viewModel: $viewModel.unitDropdown)
         }
-    }
-    
-    var actionSheet: ActionSheet {
-        ActionSheet(title: Text("Select"),
-                    buttons: viewModel.displayedOptions.indices.map { index in
-                        let option = viewModel.displayedOptions[index]
-                        return .default(Text(option.formatted)) {
-                            viewModel.send(action: .selectOption(index: index))
-                        }
-                    })
     }
     
     var body: some View {
@@ -41,12 +32,7 @@ struct CreateGoalsView: View {
                         .font(.system(size: 24, weight: .medium))
                 }
             }
-            .actionSheet(isPresented: Binding<Bool>(get: {
-                viewModel.hasSelectedDropdown
-            }, set: { _ in })
-            ) {
-                actionSheet
-            }
+            
             .navigationBarTitle(viewModel.navigationBarTitle)
             .padding(.bottom, 16)
         }

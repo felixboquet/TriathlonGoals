@@ -14,32 +14,14 @@ final class CreateGoalsViewModel: ObservableObject {
    
     var navigationBarTitle = "Créer un objectif"
     
-    @Published var dropdowns: [GoalPartViewModel] = [
-        .init(type: .activity),
-        .init(type: .unit)
-    ]
+    @Published var activityDropdown = GoalPartViewModel(type: .activity)
+    @Published var unitDropdown = GoalPartViewModel(type: .unit)
     
     private let userService: UserServiceProtocol
     private var cancellables: [AnyCancellable] = []
     
     enum Action {
-        case selectOption(index: Int)
         case createGoal
-    }
-    
-    var hasSelectedDropdown: Bool {
-        selectedDropdownIndex != nil
-    }
-    
-    var selectedDropdownIndex: Int? {
-        dropdowns.enumerated().first(where: { $0.element.isSelected })?.offset
-    }
-    
-    var displayedOptions: [DropdownOption] {
-        guard let index = selectedDropdownIndex else {
-            return []
-        }
-        return dropdowns[index].options
     }
     
     init(userService: UserServiceProtocol = UserService()) {
@@ -48,14 +30,7 @@ final class CreateGoalsViewModel: ObservableObject {
     
     func send(action: Action) {
         switch action {
-        case let .selectOption(index):
-            guard let selectedDropdownIndex = selectedDropdownIndex else {
-                return
-            }
-            clearSelectedOption()
-            dropdowns[selectedDropdownIndex].options[index].isSelected = true
-            clearSelectedDropdown()
-            
+        
         case .createGoal:
             getCurrentUserId().sink { completion in
                 switch completion {
@@ -69,22 +44,6 @@ final class CreateGoalsViewModel: ObservableObject {
             }.store(in: &cancellables)
 
         }
-    }
-    
-    func clearSelectedOption() {
-        guard let selectedDropdownIndex = selectedDropdownIndex else {
-            return
-        }
-        dropdowns[selectedDropdownIndex].options.indices.forEach { index in
-            dropdowns[selectedDropdownIndex].options[index].isSelected = false
-        }
-    }
-    
-    func clearSelectedDropdown() {
-        guard let selectedDropdownIndex = selectedDropdownIndex else {
-            return
-        }
-        dropdowns[selectedDropdownIndex].isSelected = false
     }
     
     private func getCurrentUserId() -> AnyPublisher<UserId, Error> {
@@ -106,6 +65,7 @@ extension CreateGoalsViewModel {
     struct GoalPartViewModel: DropdownItemProtocol, PrimaryTextFieldProtocol {
         
         var fieldValue: String = ""
+        var selectedOption: DropdownOption
         
         var options: [DropdownOption]
         var headerTitle: String {
@@ -113,7 +73,7 @@ extension CreateGoalsViewModel {
         }
         
         var dropdownTitle: String {
-            options.first(where: { $0.isSelected })?.formatted ?? ""
+            selectedOption.formatted
         }
         
         var isSelected: Bool = false
@@ -131,7 +91,7 @@ extension CreateGoalsViewModel {
             }
             
             self.type = type
-            
+            self.selectedOption = options.first!
         }
         
         enum GoalPartType: String, CaseIterable {
@@ -146,8 +106,7 @@ extension CreateGoalsViewModel {
             
             var toDropdownOption: DropdownOption {
                 .init(type: .text(rawValue),
-                      formatted: rawValue.capitalized,
-                      isSelected: self == .running)
+                      formatted: rawValue.capitalized)
             }
         }
         
@@ -158,8 +117,7 @@ extension CreateGoalsViewModel {
             
             var toDropdownOption: DropdownOption {
                 .init(type: .text(rawValue),
-                      formatted: rawValue.capitalized,
-                      isSelected: self == .day)
+                      formatted: rawValue.capitalized)
             }
         }
         

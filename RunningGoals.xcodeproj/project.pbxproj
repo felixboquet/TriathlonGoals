@@ -26,6 +26,7 @@
 		939218DE2542BDDE00E5ADE9 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218DD2542BDDE00E5ADE9 /* UserService.swift */; };
 		939218E225430BC000E5ADE9 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218E125430BC000E5ADE9 /* Goal.swift */; };
 		939218E625430D8000E5ADE9 /* GoalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218E525430D8000E5ADE9 /* GoalService.swift */; };
+		939218E925431E5000E5ADE9 /* GoalsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218E825431E5000E5ADE9 /* GoalsError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		939218DD2542BDDE00E5ADE9 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		939218E125430BC000E5ADE9 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		939218E525430D8000E5ADE9 /* GoalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalService.swift; sourceTree = "<group>"; };
+		939218E825431E5000E5ADE9 /* GoalsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsError.swift; sourceTree = "<group>"; };
 		E341FE6666C5C56A013F86FD /* Pods-RunningGoals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningGoals.debug.xcconfig"; path = "Target Support Files/Pods-RunningGoals/Pods-RunningGoals.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +107,7 @@
 				939218C22542B15300E5ADE9 /* GoogleService-Info.plist */,
 				9392188A2541657500E5ADE9 /* Info.plist */,
 				939218872541657500E5ADE9 /* Preview Content */,
+				939218E825431E5000E5ADE9 /* GoalsError.swift */,
 			);
 			path = RunningGoals;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				939218DE2542BDDE00E5ADE9 /* UserService.swift in Sources */,
 				939218BF2541C66E00E5ADE9 /* PrimaryTextFieldView.swift in Sources */,
 				939218A52541816F00E5ADE9 /* ReminderView.swift in Sources */,
+				939218E925431E5000E5ADE9 /* GoalsError.swift in Sources */,
 				939218BC2541C61F00E5ADE9 /* PrimaryTextFieldProtocol.swift in Sources */,
 				939218822541657300E5ADE9 /* RunningGoalsApp.swift in Sources */,
 				9392189625416F4400E5ADE9 /* Color+Extensions.swift in Sources */,

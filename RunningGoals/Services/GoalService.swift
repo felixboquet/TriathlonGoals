@@ -10,25 +10,25 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 protocol GoalServiceProtocol {
-    func create(_ goal: Goal) -> AnyPublisher<Void, Error>
+    func create(_ goal: Goal) -> AnyPublisher<Void, GoalsError>
 }
 
 final class GoalService: GoalServiceProtocol {
     
     private let db = Firestore.firestore()
     
-    func create(_ goal: Goal) -> AnyPublisher<Void, Error> {
-        return Future<Void, Error> { promise in
+    func create(_ goal: Goal) -> AnyPublisher<Void, GoalsError> {
+        return Future<Void, GoalsError> { promise in
             do {
                 _ = try self.db.collection("goals").addDocument(from: goal) { error in
                     if let error = error {
-                        promise(.failure(error))
+                        promise(.failure(.default(description: error.localizedDescription)))
                     } else {
                         promise(.success(()))
                     }
                 }
             } catch {
-                promise(.failure(error))
+                promise(.failure(.default()))
             }
         }.eraseToAnyPublisher()
     }

@@ -17,6 +17,9 @@ final class CreateGoalsViewModel: ObservableObject {
     @Published var activityDropdown = GoalPartViewModel(type: .activity)
     @Published var unitDropdown = GoalPartViewModel(type: .unit)
     
+    @Published var error: GoalsError?
+    @Published var isLoading = false
+    
     private let userService: UserServiceProtocol
     private let goalService: GoalServiceProtocol
     private var cancellables: [AnyCancellable] = []
@@ -37,12 +40,15 @@ final class CreateGoalsViewModel: ObservableObject {
         switch action {
         
         case .createGoal:
-            getCurrentUserId().flatMap { userId -> AnyPublisher<Void, Error> in
+            isLoading = true
+            getCurrentUserId().flatMap { userId -> AnyPublisher<Void, GoalsError> in
                 return self.createGoal(userId: userId)
             }.sink { completion in
+                self.isLoading = false
+                
                 switch completion {
                 case let .failure(error):
-                    print(error.localizedDescription)
+                    self.error = error
                 case .finished:
                     print("Finished")
                 }
@@ -53,10 +59,10 @@ final class CreateGoalsViewModel: ObservableObject {
         }
     }
     
-    private func createGoal(userId: UserId) -> AnyPublisher<Void, Error> {
+    private func createGoal(userId: UserId) -> AnyPublisher<Void, GoalsError> {
         guard let activity = activityDropdown.text,
               let unit = unitDropdown.text else {
-            return Fail(error: NSError()).eraseToAnyPublisher()
+            return Fail(error: .default(description: "Parsing error")).eraseToAnyPublisher()
         }
         
         let goal = Goal(
@@ -71,11 +77,11 @@ final class CreateGoalsViewModel: ObservableObject {
         return goalService.create(goal).eraseToAnyPublisher()
     }
     
-    private func getCurrentUserId() -> AnyPublisher<UserId, Error> {
-        return userService.getCurrentUser().flatMap { user -> AnyPublisher<UserId, Error> in
+    private func getCurrentUserId() -> AnyPublisher<UserId, GoalsError> {
+        return userService.getCurrentUser().flatMap { user -> AnyPublisher<UserId, GoalsError> in
             if let userId = user?.uid {
                 return Just(userId)
-                    .setFailureType(to: Error.self)
+                    .setFailureType(to: GoalsError.self)
                     .eraseToAnyPublisher()
             } else {
                 return self.userService.signInAnonymously()

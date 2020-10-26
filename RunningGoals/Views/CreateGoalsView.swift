@@ -19,7 +19,7 @@ struct CreateGoalsView: View {
         }
     }
     
-    var body: some View {
+    var mainContentView: some View {
         ScrollView {
             VStack {
                 dropdownList
@@ -32,7 +32,26 @@ struct CreateGoalsView: View {
                         .font(.system(size: 24, weight: .medium))
                 }
             }
-            
+        }
+    }
+    
+    var body: some View {
+        ScrollView {
+            ZStack {
+                if viewModel.isLoading {
+                    ProgressView()
+                } else {
+                    mainContentView
+                }
+            }.alert(isPresented: Binding<Bool>.constant($viewModel.error.wrappedValue != nil)) {
+                Alert(
+                    title: Text("Erreur"),
+                    message: Text($viewModel.error.wrappedValue?.localizedDescription ?? ""),
+                    dismissButton: .default(Text("OK"), action: {
+                        viewModel.error = nil
+                    })
+                )
+            }
             .navigationBarTitle(viewModel.navigationBarTitle)
             .padding(.bottom, 16)
         }

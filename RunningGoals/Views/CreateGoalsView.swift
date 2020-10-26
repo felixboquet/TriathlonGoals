@@ -10,20 +10,14 @@ import SwiftUI
 struct CreateGoalsView: View {
     
     @StateObject var viewModel = CreateGoalsViewModel()
-    @State private var text = ""
-    
-    var dropdownList: some View {
-        Group {
-            DropDownView(viewModel: $viewModel.activityDropdown)
-            DropDownView(viewModel: $viewModel.unitDropdown)
-        }
-    }
     
     var mainContentView: some View {
         ScrollView {
             VStack {
-                dropdownList
-                PrimaryTextFieldView(headerTitle: "Distance (km)", value: $text)
+                DropDownView(viewModel: $viewModel.activityDropdown)
+                PrimaryTextFieldView(headerTitle: "Distance (km)", value: $viewModel.distanceText)
+                PrimaryTextFieldView(headerTitle: "Temps", value: $viewModel.durationText)
+                DropDownView(viewModel: $viewModel.unitDropdown)
                 Spacer()
                 Button(action: {
                     viewModel.send(action: .createGoal)
@@ -58,3 +52,4 @@ struct CreateGoalsView: View {
     }
     
 }
+

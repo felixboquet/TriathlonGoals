@@ -16,6 +16,8 @@ final class CreateGoalsViewModel: ObservableObject {
     
     @Published var activityDropdown = GoalPartViewModel(type: .activity)
     @Published var unitDropdown = GoalPartViewModel(type: .unit)
+    @Published var distanceText = ""
+    @Published var durationText = ""
     
     @Published var error: GoalsError?
     @Published var isLoading = false
@@ -67,8 +69,8 @@ final class CreateGoalsViewModel: ObservableObject {
         
         let goal = Goal(
             activity: activity,
-            distance: 10,
-            time: 1,
+            distance: (distanceText as NSString).floatValue,
+            time: (durationText as NSString).integerValue,
             unit: unit,
             userId: userId,
             startDate: Date()
@@ -143,6 +145,7 @@ extension CreateGoalsViewModel {
         
         enum UnitOption: String, CaseIterable, DropdownOptionProtocol {
             case day = "Jours"
+            case week = "Semaines"
             case month = "Mois"
             case year = "Années"
             

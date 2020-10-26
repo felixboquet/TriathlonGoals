@@ -19,7 +19,7 @@ struct PrimaryTextFieldView: View {
                     .font(.system(size: 22, weight: .semibold))
                 Spacer()
             }.padding(.vertical, 8)
-            TextField("Coucou", text: $value).textFieldStyle(PrimaryTextFieldStyle())
+            TextField("", text: $value).textFieldStyle(PrimaryTextFieldStyle())
         }.padding(20)
     }
     

@@ -11,6 +11,7 @@ import FirebaseFirestoreSwift
 
 protocol GoalServiceProtocol {
     func create(_ goal: Goal) -> AnyPublisher<Void, GoalsError>
+    func observeGoals(userId: UserId) -> AnyPublisher<[Goal], GoalsError>
 }
 
 final class GoalService: GoalServiceProtocol {
@@ -31,6 +32,21 @@ final class GoalService: GoalServiceProtocol {
                 promise(.failure(.default()))
             }
         }.eraseToAnyPublisher()
+    }
+    
+    func observeGoals(userId: UserId) -> AnyPublisher<[Goal], GoalsError> {
+        let query = db.collection("goals").whereField("userId", isEqualTo: userId)
+        return Publishers.QuerySnapshotPublisher(query: query)
+            .flatMap { snapShot -> AnyPublisher<[Goal], GoalsError> in
+                do {
+                    let goals = try snapShot.documents.compactMap {
+                        try $0.data(as: Goal.self)
+                    }
+                    return Just(goals).setFailureType(to: GoalsError.self).eraseToAnyPublisher()
+                } catch {
+                    return Fail(error: .default(description: "Parsing error")).eraseToAnyPublisher()
+                }
+            }.eraseToAnyPublisher()
     }
     
 }

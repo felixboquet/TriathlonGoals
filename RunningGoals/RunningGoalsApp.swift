@@ -17,12 +17,7 @@ struct RunningGoalsApp: App {
     var body: some Scene {
         WindowGroup {
             if appState.isLoggedIn {
-                TabView {
-                    Text("Test")
-                        .tabItem {
-                            Image(systemName: "hare")
-                        }
-                }.accentColor(.primary)
+                TabContainerView()
             } else {
                 LandingView()
             }

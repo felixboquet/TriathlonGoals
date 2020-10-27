@@ -28,6 +28,8 @@
 		939218E625430D8000E5ADE9 /* GoalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218E525430D8000E5ADE9 /* GoalService.swift */; };
 		939218E925431E5000E5ADE9 /* GoalsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218E825431E5000E5ADE9 /* GoalsError.swift */; };
 		939D112F2547346D000A1E99 /* AuthPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939D112E2547346D000A1E99 /* AuthPublisher.swift */; };
+		939D11322548108E000A1E99 /* TabContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939D11312548108E000A1E99 /* TabContainerView.swift */; };
+		939D113525481528000A1E99 /* TabContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939D113425481528000A1E99 /* TabContainerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		939218E525430D8000E5ADE9 /* GoalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalService.swift; sourceTree = "<group>"; };
 		939218E825431E5000E5ADE9 /* GoalsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsError.swift; sourceTree = "<group>"; };
 		939D112E2547346D000A1E99 /* AuthPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPublisher.swift; sourceTree = "<group>"; };
+		939D11312548108E000A1E99 /* TabContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContainerView.swift; sourceTree = "<group>"; };
+		939D113425481528000A1E99 /* TabContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContainerViewModel.swift; sourceTree = "<group>"; };
 		E341FE6666C5C56A013F86FD /* Pods-RunningGoals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningGoals.debug.xcconfig"; path = "Target Support Files/Pods-RunningGoals/Pods-RunningGoals.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +143,7 @@
 				939218A42541816F00E5ADE9 /* ReminderView.swift */,
 				939218B62541BD9600E5ADE9 /* Styles */,
 				93921899254170F500E5ADE9 /* Widgets */,
+				939D11312548108E000A1E99 /* TabContainerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 				939218A825418E8E00E5ADE9 /* CreateGoalsViewModel.swift */,
 				939218AB2541A09000E5ADE9 /* DropdownItemProtocol.swift */,
 				939218BB2541C61F00E5ADE9 /* PrimaryTextFieldProtocol.swift */,
+				939D113425481528000A1E99 /* TabContainerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -319,12 +325,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				939D113525481528000A1E99 /* TabContainerViewModel.swift in Sources */,
 				939D112F2547346D000A1E99 /* AuthPublisher.swift in Sources */,
 				939218B82541BDA900E5ADE9 /* PrimaryTextFieldStyle.swift in Sources */,
 				9392189225416E3000E5ADE9 /* PrimaryButtonStyle.swift in Sources */,
 				9392189E254177EC00E5ADE9 /* CreateGoalsView.swift in Sources */,
 				939218842541657300E5ADE9 /* LandingView.swift in Sources */,
 				939218AC2541A09000E5ADE9 /* DropdownItemProtocol.swift in Sources */,
+				939D11322548108E000A1E99 /* TabContainerView.swift in Sources */,
 				939218A925418E8E00E5ADE9 /* CreateGoalsViewModel.swift in Sources */,
 				939218E625430D8000E5ADE9 /* GoalService.swift in Sources */,
 				939218E225430BC000E5ADE9 /* Goal.swift in Sources */,

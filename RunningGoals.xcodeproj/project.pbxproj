@@ -27,6 +27,7 @@
 		939218E225430BC000E5ADE9 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218E125430BC000E5ADE9 /* Goal.swift */; };
 		939218E625430D8000E5ADE9 /* GoalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218E525430D8000E5ADE9 /* GoalService.swift */; };
 		939218E925431E5000E5ADE9 /* GoalsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218E825431E5000E5ADE9 /* GoalsError.swift */; };
+		939D112F2547346D000A1E99 /* AuthPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939D112E2547346D000A1E99 /* AuthPublisher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		939218E125430BC000E5ADE9 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		939218E525430D8000E5ADE9 /* GoalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalService.swift; sourceTree = "<group>"; };
 		939218E825431E5000E5ADE9 /* GoalsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsError.swift; sourceTree = "<group>"; };
+		939D112E2547346D000A1E99 /* AuthPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPublisher.swift; sourceTree = "<group>"; };
 		E341FE6666C5C56A013F86FD /* Pods-RunningGoals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningGoals.debug.xcconfig"; path = "Target Support Files/Pods-RunningGoals/Pods-RunningGoals.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				939218E025430BB600E5ADE9 /* Models */,
+				939D112D25471D45000A1E99 /* Publishers */,
 				939218DC2542BDD600E5ADE9 /* Services */,
 				9392189B254175A300E5ADE9 /* ViewModels */,
 				93921898254170EF00E5ADE9 /* Views */,
@@ -183,6 +186,14 @@
 				939218E125430BC000E5ADE9 /* Goal.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		939D112D25471D45000A1E99 /* Publishers */ = {
+			isa = PBXGroup;
+			children = (
+				939D112E2547346D000A1E99 /* AuthPublisher.swift */,
+			);
+			path = Publishers;
 			sourceTree = "<group>";
 		};
 		B9FA634E0069614DB04485FB /* Pods */ = {
@@ -308,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				939D112F2547346D000A1E99 /* AuthPublisher.swift in Sources */,
 				939218B82541BDA900E5ADE9 /* PrimaryTextFieldStyle.swift in Sources */,
 				9392189225416E3000E5ADE9 /* PrimaryButtonStyle.swift in Sources */,
 				9392189E254177EC00E5ADE9 /* CreateGoalsView.swift in Sources */,

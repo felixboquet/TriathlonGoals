@@ -11,6 +11,9 @@ final class GoalsListViewModel: ObservableObject {
     private let userService: UserServiceProtocol
     private let goalService: GoalServiceProtocol
     private var cancellables: [AnyCancellable] = []
+    @Published private(set) var itemViewModels = [GoalItemViewModel] ()
+    
+    let navigationTitle = "Objectifs"
     
     init(
         userService: UserServiceProtocol = UserService(),
@@ -35,7 +38,7 @@ final class GoalsListViewModel: ObservableObject {
                     print("Finished")
                 }
             } receiveValue: { (goals) in
-                print(goals)
+                self.itemViewModels = goals.map { .init($0) }
             }
             .store(in: &cancellables)
     }

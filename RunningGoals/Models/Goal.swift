@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct Goal: Codable {
+struct Goal: Codable, Hashable {
     let activity: String
     let distance: Float
     let time: Int

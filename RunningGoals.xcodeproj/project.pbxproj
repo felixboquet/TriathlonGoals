@@ -33,6 +33,7 @@
 		939D1138254832F3000A1E99 /* GoalsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939D1137254832F3000A1E99 /* GoalsListView.swift */; };
 		939D113C2548331D000A1E99 /* GoalsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939D113B2548331D000A1E99 /* GoalsListViewModel.swift */; };
 		939D1141254833FE000A1E99 /* QuerySnapshotPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939D1140254833FE000A1E99 /* QuerySnapshotPublisher.swift */; };
+		939D114425485D8D000A1E99 /* GoalItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939D114325485D8D000A1E99 /* GoalItemViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		939D1137254832F3000A1E99 /* GoalsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsListView.swift; sourceTree = "<group>"; };
 		939D113B2548331D000A1E99 /* GoalsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsListViewModel.swift; sourceTree = "<group>"; };
 		939D1140254833FE000A1E99 /* QuerySnapshotPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuerySnapshotPublisher.swift; sourceTree = "<group>"; };
+		939D114325485D8D000A1E99 /* GoalItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalItemViewModel.swift; sourceTree = "<group>"; };
 		E341FE6666C5C56A013F86FD /* Pods-RunningGoals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningGoals.debug.xcconfig"; path = "Target Support Files/Pods-RunningGoals/Pods-RunningGoals.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,6 +171,7 @@
 			children = (
 				939218A825418E8E00E5ADE9 /* CreateGoalsViewModel.swift */,
 				939218AB2541A09000E5ADE9 /* DropdownItemProtocol.swift */,
+				939D114325485D8D000A1E99 /* GoalItemViewModel.swift */,
 				939D113B2548331D000A1E99 /* GoalsListViewModel.swift */,
 				939218BB2541C61F00E5ADE9 /* PrimaryTextFieldProtocol.swift */,
 				939D113425481528000A1E99 /* TabContainerViewModel.swift */,
@@ -346,6 +349,7 @@
 				939D11322548108E000A1E99 /* TabContainerView.swift in Sources */,
 				939218A925418E8E00E5ADE9 /* CreateGoalsViewModel.swift in Sources */,
 				939218E625430D8000E5ADE9 /* GoalService.swift in Sources */,
+				939D114425485D8D000A1E99 /* GoalItemViewModel.swift in Sources */,
 				939218E225430BC000E5ADE9 /* Goal.swift in Sources */,
 				939218DE2542BDDE00E5ADE9 /* UserService.swift in Sources */,
 				939218BF2541C66E00E5ADE9 /* PrimaryTextFieldView.swift in Sources */,

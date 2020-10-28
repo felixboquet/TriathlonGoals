@@ -40,7 +40,18 @@ struct GoalsListView: View {
                 }
                 Spacer()
             }.padding(16)
-        }.navigationTitle(viewModel.navigationTitle)
+        }
+        .sheet(isPresented: $viewModel.showingCreateModal) {
+            NavigationView {
+                CreateGoalsView()
+            }
+        }
+        .navigationBarItems(trailing: Button {
+            viewModel.send(action: .create)
+        } label: {
+            Image(systemName: "plus.circle").imageScale(.large)
+        })
+        .navigationTitle(viewModel.navigationTitle)
     }
 }
 

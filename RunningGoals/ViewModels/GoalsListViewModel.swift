@@ -14,10 +14,12 @@ final class GoalsListViewModel: ObservableObject {
     @Published private(set) var itemViewModels = [GoalItemViewModel] ()
     @Published private(set) var error: GoalsError?
     @Published private(set) var isLoading = false
+    @Published var showingCreateModal = false
     let navigationTitle = "Objectifs"
     
     enum Action {
         case retry
+        case create
     }
     
     init(
@@ -33,6 +35,8 @@ final class GoalsListViewModel: ObservableObject {
         switch action {
         case .retry:
             observeGoals()
+        case .create:
+            showingCreateModal = true
         }
     }
     
@@ -63,6 +67,7 @@ final class GoalsListViewModel: ObservableObject {
                 }
                 me.isLoading = false
                 me.error = nil
+                me.showingCreateModal = false
                 me.itemViewModels = goals.map { .init($0) }
             }
             .store(in: &cancellables)

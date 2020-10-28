@@ -24,6 +24,7 @@ struct CreateGoalsView: View {
                 }) {
                     Text("Créer")
                         .font(.system(size: 24, weight: .medium))
+                        .foregroundColor(.primary)
                 }
             }
         }

@@ -8,14 +8,20 @@
 import Foundation
 
 struct GoalItemViewModel: Hashable {
+    
     private let goal: Goal
+    private let currentDistance = 1.5
+    
+    init(_ goal: Goal) {
+        self.goal = goal
+    }
     
     var title: String {
         goal.activity.capitalized
     }
     
     var statusText: String {
-        return "0km / \(goal.distance)km"
+        return "\(currentDistance) / \(goal.distance)km"
     }
     
     var remainingDaysText: String {
@@ -28,8 +34,12 @@ struct GoalItemViewModel: Hashable {
         }
     }
     
-    init(_ goal: Goal) {
-        self.goal = goal
+    var totalDistanceValue: Float {
+        goal.distance
+    }
+    
+    var currentDistanceValue: Float {
+        Float(currentDistance)
     }
 
     private var daysFromStart: Int {

@@ -12,8 +12,13 @@ final class GoalsListViewModel: ObservableObject {
     private let goalService: GoalServiceProtocol
     private var cancellables: [AnyCancellable] = []
     @Published private(set) var itemViewModels = [GoalItemViewModel] ()
-    
+    @Published private(set) var error: GoalsError?
+    @Published private(set) var isLoading = false
     let navigationTitle = "Objectifs"
+    
+    enum Action {
+        case retry
+    }
     
     init(
         userService: UserServiceProtocol = UserService(),
@@ -24,21 +29,41 @@ final class GoalsListViewModel: ObservableObject {
         observeGoals()
     }
     
+    func send(action: Action) {
+        switch action {
+        case .retry:
+            observeGoals()
+        }
+    }
+    
     private func observeGoals() {
+        isLoading = true
         userService.getCurrentUser()
             .compactMap { $0?.uid }
-            .flatMap { userId -> AnyPublisher<[Goal], GoalsError> in
-                return self.goalService.observeGoals(userId: userId)
+            .flatMap { [weak self] userId -> AnyPublisher<[Goal], GoalsError> in
+                guard let me = self else {
+                    return Fail(error: .default()).eraseToAnyPublisher()
+                }
+                return me.goalService.observeGoals(userId: userId)
             }
-            .sink { completion in
+            .sink { [weak self] completion in
+                guard let me = self else {
+                    return
+                }
+                me.isLoading = false
                 switch completion {
                 case let .failure(error):
-                    print(error.localizedDescription)
+                    me.error = error
                 case .finished:
                     print("Finished")
                 }
-            } receiveValue: { (goals) in
-                self.itemViewModels = goals.map { .init($0) }
+            } receiveValue: { [weak self] goals in
+                guard let me = self else {
+                    return
+                }
+                me.isLoading = false
+                me.error = nil
+                me.itemViewModels = goals.map { .init($0) }
             }
             .store(in: &cancellables)
     }

@@ -34,6 +34,9 @@
 		939D113C2548331D000A1E99 /* GoalsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939D113B2548331D000A1E99 /* GoalsListViewModel.swift */; };
 		939D1141254833FE000A1E99 /* QuerySnapshotPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939D1140254833FE000A1E99 /* QuerySnapshotPublisher.swift */; };
 		939D114425485D8D000A1E99 /* GoalItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939D114325485D8D000A1E99 /* GoalItemViewModel.swift */; };
+		939D11492549A23A000A1E99 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939D11482549A23A000A1E99 /* SettingsView.swift */; };
+		939D114C2549A24D000A1E99 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939D114B2549A24D000A1E99 /* SettingsViewModel.swift */; };
+		939D114F2549A611000A1E99 /* SettingsItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939D114E2549A611000A1E99 /* SettingsItemViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +70,9 @@
 		939D113B2548331D000A1E99 /* GoalsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsListViewModel.swift; sourceTree = "<group>"; };
 		939D1140254833FE000A1E99 /* QuerySnapshotPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuerySnapshotPublisher.swift; sourceTree = "<group>"; };
 		939D114325485D8D000A1E99 /* GoalItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalItemViewModel.swift; sourceTree = "<group>"; };
+		939D11482549A23A000A1E99 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		939D114B2549A24D000A1E99 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		939D114E2549A611000A1E99 /* SettingsItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemViewModel.swift; sourceTree = "<group>"; };
 		E341FE6666C5C56A013F86FD /* Pods-RunningGoals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningGoals.debug.xcconfig"; path = "Target Support Files/Pods-RunningGoals/Pods-RunningGoals.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +156,7 @@
 				939D1137254832F3000A1E99 /* GoalsListView.swift */,
 				939218832541657300E5ADE9 /* LandingView.swift */,
 				939218A42541816F00E5ADE9 /* ReminderView.swift */,
+				939D11482549A23A000A1E99 /* SettingsView.swift */,
 				939D11312548108E000A1E99 /* TabContainerView.swift */,
 				939218B62541BD9600E5ADE9 /* Styles */,
 				93921899254170F500E5ADE9 /* Widgets */,
@@ -174,6 +181,8 @@
 				939D114325485D8D000A1E99 /* GoalItemViewModel.swift */,
 				939D113B2548331D000A1E99 /* GoalsListViewModel.swift */,
 				939218BB2541C61F00E5ADE9 /* PrimaryTextFieldProtocol.swift */,
+				939D114E2549A611000A1E99 /* SettingsItemViewModel.swift */,
+				939D114B2549A24D000A1E99 /* SettingsViewModel.swift */,
 				939D113425481528000A1E99 /* TabContainerViewModel.swift */,
 			);
 			path = ViewModels;
@@ -347,6 +356,7 @@
 			files = (
 				939D113525481528000A1E99 /* TabContainerViewModel.swift in Sources */,
 				939D112F2547346D000A1E99 /* AuthPublisher.swift in Sources */,
+				939D114F2549A611000A1E99 /* SettingsItemViewModel.swift in Sources */,
 				939218B82541BDA900E5ADE9 /* PrimaryTextFieldStyle.swift in Sources */,
 				939D1141254833FE000A1E99 /* QuerySnapshotPublisher.swift in Sources */,
 				9392189225416E3000E5ADE9 /* PrimaryButtonStyle.swift in Sources */,
@@ -354,6 +364,8 @@
 				939218842541657300E5ADE9 /* LandingView.swift in Sources */,
 				939218AC2541A09000E5ADE9 /* DropdownItemProtocol.swift in Sources */,
 				939D1138254832F3000A1E99 /* GoalsListView.swift in Sources */,
+				939D11492549A23A000A1E99 /* SettingsView.swift in Sources */,
+				939D114C2549A24D000A1E99 /* SettingsViewModel.swift in Sources */,
 				939D11322548108E000A1E99 /* TabContainerView.swift in Sources */,
 				939218A925418E8E00E5ADE9 /* CreateGoalsViewModel.swift in Sources */,
 				939218E625430D8000E5ADE9 /* GoalService.swift in Sources */,

@@ -10,6 +10,7 @@ import SwiftUI
 struct GoalsListView: View {
     
     @StateObject private var viewModel = GoalsListViewModel()
+    @AppStorage("isDarkMode") private var isDarkMode = false
     
     var body: some View {
         ZStack {
@@ -44,7 +45,7 @@ struct GoalsListView: View {
         .sheet(isPresented: $viewModel.showingCreateModal) {
             NavigationView {
                 CreateGoalsView()
-            }
+            }.preferredColorScheme(isDarkMode ? .dark : .light)
         }
         .navigationBarItems(trailing: Button {
             viewModel.send(action: .create)

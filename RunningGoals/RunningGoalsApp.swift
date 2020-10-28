@@ -13,11 +13,13 @@ struct RunningGoalsApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject private var appState = AppState()
+    @AppStorage("isDarkMode") private var isDarkMode = false
     
     var body: some Scene {
         WindowGroup {
             if appState.isLoggedIn {
                 TabContainerView()
+                    .preferredColorScheme(isDarkMode ? .dark : .light)
             } else {
                 LandingView()
             }

@@ -33,7 +33,9 @@ struct TabContainerView: View {
                 GoalsListView()
             }
         case .settings:
-            Text("Settings")
+            NavigationView {
+                SettingsView()
+            }
         }
     }
 }

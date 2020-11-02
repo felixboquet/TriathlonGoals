@@ -10,7 +10,7 @@ import Foundation
 struct GoalItemViewModel: Hashable {
     
     private let goal: Goal
-    private let currentDistance = 1.5
+    private let currentDistance = 100.0
     
     init(_ goal: Goal) {
         self.goal = goal
@@ -21,7 +21,11 @@ struct GoalItemViewModel: Hashable {
     }
     
     var statusText: String {
-        return "\(currentDistance) / \(goal.distance)km"
+        if (!isComplete) {
+            return "\(currentDistance) / \(goal.distance)km"
+        } else {
+            return "Terminé"
+        }
     }
     
     var remainingDaysText: String {
@@ -41,12 +45,16 @@ struct GoalItemViewModel: Hashable {
     var currentDistanceValue: Float {
         Float(currentDistance)
     }
-
+    
     private var daysFromStart: Int {
         guard let daysFromStart = Calendar.current.dateComponents([.day], from: goal.startDate, to: Date()).day else {
             return 0
         }
         
         return abs(daysFromStart)
+    }
+    
+    private var isComplete: Bool {
+        Float(currentDistance) >= totalDistanceValue
     }
 }

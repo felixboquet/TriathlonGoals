@@ -12,6 +12,7 @@ protocol UserServiceProtocol {
     func getCurrentUser() -> AnyPublisher<User?, Never>
     func signInAnonymously() -> AnyPublisher<User, GoalsError>
     func observeAuthChanges() -> AnyPublisher<User?, Never>
+    func linkAccount(email: String, password: String) -> AnyPublisher<Void, GoalsError>
 }
 
 final class UserService: UserServiceProtocol {
@@ -34,6 +35,25 @@ final class UserService: UserServiceProtocol {
     
     func observeAuthChanges() -> AnyPublisher<User?, Never> {
         Publishers.AuthPublisher().eraseToAnyPublisher()
+    }
+    
+    func linkAccount(email: String, password: String) -> AnyPublisher<Void, GoalsError> {
+        let emailCredential = EmailAuthProvider.credential(withEmail: email, password: password)
+        return Future<Void, GoalsError> { promise in
+            Auth.auth().currentUser?.link(with: emailCredential) { result, error in
+                if let error = error {
+                    return promise(.failure(.default(description: error.localizedDescription)))
+                } else if let user = result?.user {
+                    Auth.auth().updateCurrentUser(user) { error in
+                        if let error = error {
+                            return promise(.failure(.default(description: error.localizedDescription)))
+                        } else {
+                            return promise(.success(()))
+                        }
+                    }
+                }
+            }
+        }.eraseToAnyPublisher()
     }
     
 }

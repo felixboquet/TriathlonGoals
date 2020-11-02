@@ -17,12 +17,12 @@ struct RunningGoalsApp: App {
     
     var body: some Scene {
         WindowGroup {
-//            if appState.isLoggedIn {
-//                TabContainerView()
-//                    .preferredColorScheme(isDarkMode ? .dark : .light)
-//            } else {
+            if appState.isLoggedIn {
+                TabContainerView()
+                    .preferredColorScheme(isDarkMode ? .dark : .light)
+            } else {
                 LandingView()
-//            }
+            }
         }
     }
 }

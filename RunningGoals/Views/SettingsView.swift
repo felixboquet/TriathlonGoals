@@ -23,8 +23,9 @@ struct SettingsView: View {
             }
         }.background(
             NavigationLink(
-                destination: LoginSignupView(viewModel: .init(mode: .signup)),
-                isActive: $viewModel.signupPushed) {
+                destination: LoginSignupView(viewModel: .init(mode: .signup, isPushed: $viewModel.signupPushed)),
+                isActive: $viewModel.signupPushed
+            ) {
                 
             }
         )

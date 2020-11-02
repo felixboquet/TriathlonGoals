@@ -12,18 +12,20 @@ struct LoginSignupView: View {
     @ObservedObject var viewModel: LoginSignupViewModel
     
     var emailTextField: some View {
-        TextField("Email", text: $viewModel.emailText)
+        TextField(viewModel.emailPlaceholder, text: $viewModel.emailText)
             .modifier(TextFieldCustomRoundedStyle())
+            .autocapitalization(.none)
     }
     
     var passwordTextField: some View {
-        SecureField("Mot de passe", text: $viewModel.passwordText)
+        SecureField(viewModel.passwordPlaceholder, text: $viewModel.passwordText)
             .modifier(TextFieldCustomRoundedStyle())
+            .autocapitalization(.none)
     }
     
     var actionButton: some View {
         Button(viewModel.buttontitle) {
-            
+            viewModel.tappedActionButton()
         }.padding()
         .frame(maxWidth: .infinity)
         .foregroundColor(.white)
@@ -53,7 +55,7 @@ struct LoginSignupView: View {
 struct LoginSignupView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            LoginSignupView(viewModel: .init(mode: .login))
+            LoginSignupView(viewModel: .init(mode: .login, isPushed: .constant(false)))
         }.environment(\.colorScheme, .dark)
     }
 }

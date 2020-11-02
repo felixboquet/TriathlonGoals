@@ -37,6 +37,10 @@
 		939D11492549A23A000A1E99 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939D11482549A23A000A1E99 /* SettingsView.swift */; };
 		939D114C2549A24D000A1E99 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939D114B2549A24D000A1E99 /* SettingsViewModel.swift */; };
 		939D114F2549A611000A1E99 /* SettingsItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939D114E2549A611000A1E99 /* SettingsItemViewModel.swift */; };
+		939D1154254AD5D3000A1E99 /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939D1153254AD5D3000A1E99 /* LandingViewModel.swift */; };
+		93DB84F42550145500C103D8 /* LoginSignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB84F32550145500C103D8 /* LoginSignupView.swift */; };
+		93DB84F7255014A300C103D8 /* LoginSignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB84F6255014A300C103D8 /* LoginSignupViewModel.swift */; };
+		93DB85112550225800C103D8 /* TextFieldCustomRoundedStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB85102550225800C103D8 /* TextFieldCustomRoundedStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +77,10 @@
 		939D11482549A23A000A1E99 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		939D114B2549A24D000A1E99 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		939D114E2549A611000A1E99 /* SettingsItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemViewModel.swift; sourceTree = "<group>"; };
+		939D1153254AD5D3000A1E99 /* LandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
+		93DB84F32550145500C103D8 /* LoginSignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupView.swift; sourceTree = "<group>"; };
+		93DB84F6255014A300C103D8 /* LoginSignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupViewModel.swift; sourceTree = "<group>"; };
+		93DB85102550225800C103D8 /* TextFieldCustomRoundedStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCustomRoundedStyle.swift; sourceTree = "<group>"; };
 		E341FE6666C5C56A013F86FD /* Pods-RunningGoals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningGoals.debug.xcconfig"; path = "Target Support Files/Pods-RunningGoals/Pods-RunningGoals.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,6 +163,7 @@
 				9392189D254177EC00E5ADE9 /* CreateGoalsView.swift */,
 				939D1137254832F3000A1E99 /* GoalsListView.swift */,
 				939218832541657300E5ADE9 /* LandingView.swift */,
+				93DB84F32550145500C103D8 /* LoginSignupView.swift */,
 				939218A42541816F00E5ADE9 /* ReminderView.swift */,
 				939D11482549A23A000A1E99 /* SettingsView.swift */,
 				939D11312548108E000A1E99 /* TabContainerView.swift */,
@@ -180,6 +189,8 @@
 				939218AB2541A09000E5ADE9 /* DropdownItemProtocol.swift */,
 				939D114325485D8D000A1E99 /* GoalItemViewModel.swift */,
 				939D113B2548331D000A1E99 /* GoalsListViewModel.swift */,
+				939D1153254AD5D3000A1E99 /* LandingViewModel.swift */,
+				93DB84F6255014A300C103D8 /* LoginSignupViewModel.swift */,
 				939218BB2541C61F00E5ADE9 /* PrimaryTextFieldProtocol.swift */,
 				939D114E2549A611000A1E99 /* SettingsItemViewModel.swift */,
 				939D114B2549A24D000A1E99 /* SettingsViewModel.swift */,
@@ -193,6 +204,7 @@
 			children = (
 				9392189125416E3000E5ADE9 /* PrimaryButtonStyle.swift */,
 				939218B72541BDA900E5ADE9 /* PrimaryTextFieldStyle.swift */,
+				93DB85102550225800C103D8 /* TextFieldCustomRoundedStyle.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -362,6 +374,7 @@
 				9392189225416E3000E5ADE9 /* PrimaryButtonStyle.swift in Sources */,
 				9392189E254177EC00E5ADE9 /* CreateGoalsView.swift in Sources */,
 				939218842541657300E5ADE9 /* LandingView.swift in Sources */,
+				93DB85112550225800C103D8 /* TextFieldCustomRoundedStyle.swift in Sources */,
 				939218AC2541A09000E5ADE9 /* DropdownItemProtocol.swift in Sources */,
 				939D1138254832F3000A1E99 /* GoalsListView.swift in Sources */,
 				939D11492549A23A000A1E99 /* SettingsView.swift in Sources */,
@@ -370,7 +383,9 @@
 				939218A925418E8E00E5ADE9 /* CreateGoalsViewModel.swift in Sources */,
 				939218E625430D8000E5ADE9 /* GoalService.swift in Sources */,
 				939D114425485D8D000A1E99 /* GoalItemViewModel.swift in Sources */,
+				939D1154254AD5D3000A1E99 /* LandingViewModel.swift in Sources */,
 				939218E225430BC000E5ADE9 /* Goal.swift in Sources */,
+				93DB84F7255014A300C103D8 /* LoginSignupViewModel.swift in Sources */,
 				939218DE2542BDDE00E5ADE9 /* UserService.swift in Sources */,
 				939218BF2541C66E00E5ADE9 /* PrimaryTextFieldView.swift in Sources */,
 				939218A52541816F00E5ADE9 /* ReminderView.swift in Sources */,
@@ -379,6 +394,7 @@
 				939218822541657300E5ADE9 /* RunningGoalsApp.swift in Sources */,
 				939D113C2548331D000A1E99 /* GoalsListViewModel.swift in Sources */,
 				9392189625416F4400E5ADE9 /* Color+Extensions.swift in Sources */,
+				93DB84F42550145500C103D8 /* LoginSignupView.swift in Sources */,
 				939218A225417A6000E5ADE9 /* DropDownView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

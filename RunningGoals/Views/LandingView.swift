@@ -9,7 +9,38 @@ import SwiftUI
 
 struct LandingView: View {
     
-    @State private var isActive = false
+    @StateObject private var viewModel = LandingViewModel()
+    
+    var title: some View {
+        Text(viewModel.title)
+            .font(.system(size: 64, weight: .medium))
+            .foregroundColor(.white)
+    }
+    
+    var createButton: some View {
+        Button(action: {
+            viewModel.createPushed = true
+        }) {
+            HStack(spacing: 8) {
+                Spacer()
+                Image(systemName: viewModel.createButtonImageName)
+                    .font(.system(size: 24))
+                    .foregroundColor(.white)
+                
+                Text(viewModel.createButtonTitle)
+                    .font(.system(size: 24))
+                    .foregroundColor(.white)
+                Spacer()
+            }
+        }.padding(16)
+        .buttonStyle(PrimaryButtonStyle())
+    }
+    
+    var alreadyHaveAccountButton: some View {
+        Button(viewModel.alreadyHaveAccountTitle) {
+            viewModel.loginSignupPushed = true
+        }.foregroundColor(.white)
+    }
     
     var body: some View {
         
@@ -17,31 +48,18 @@ struct LandingView: View {
             GeometryReader { proxy in
                 VStack {
                     Spacer().frame(height: proxy.size.height * 0.18)
-                    Text("Objectifs Triathlon")
-                        .font(.system(size: 64, weight: .medium))
-                        .foregroundColor(.white)
+                    title
                     Spacer()
                     
                     NavigationLink(
                         destination: CreateGoalsView(),
-                        isActive: $isActive) {
-                        Button(action: {
-                            isActive = true
-                        }) {
-                            HStack(spacing: 8) {
-                                Spacer()
-                                Image(systemName: "plus.circle")
-                                    .font(.system(size: 24))
-                                    .foregroundColor(.white)
-                                
-                                Text("Créer un objectif")
-                                    .font(.system(size: 24))
-                                    .foregroundColor(.white)
-                                Spacer()
-                            }
-                        }.padding(16)
-                        .buttonStyle(PrimaryButtonStyle())
-                    }
+                        isActive: $viewModel.createPushed) {}
+                    createButton
+                    
+                    NavigationLink(
+                        destination: LoginSignupView(viewModel: .init(mode: .login)),
+                        isActive: $viewModel.loginSignupPushed) {}
+                    alreadyHaveAccountButton
                 }
                 .frame(
                     maxWidth: .infinity,

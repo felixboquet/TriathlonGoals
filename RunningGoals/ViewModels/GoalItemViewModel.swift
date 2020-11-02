@@ -10,7 +10,7 @@ import Foundation
 struct GoalItemViewModel: Hashable {
     
     private let goal: Goal
-    private let currentDistance = 100.0
+    private let currentDistance = 10.5
     
     init(_ goal: Goal) {
         self.goal = goal

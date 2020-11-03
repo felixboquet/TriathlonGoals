@@ -44,6 +44,7 @@
 		93DB85162551373100C103D8 /* ProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB85152551373100C103D8 /* ProgressCircleView.swift */; };
 		93DB8519255137B000C103D8 /* ProgressCircleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB8518255137B000C103D8 /* ProgressCircleViewModel.swift */; };
 		93DB851C25514C8600C103D8 /* GoalItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB851B25514C8600C103D8 /* GoalItemView.swift */; };
+		93DB85202551902700C103D8 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB851F2551902600C103D8 /* Activity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		93DB85152551373100C103D8 /* ProgressCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleView.swift; sourceTree = "<group>"; };
 		93DB8518255137B000C103D8 /* ProgressCircleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleViewModel.swift; sourceTree = "<group>"; };
 		93DB851B25514C8600C103D8 /* GoalItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalItemView.swift; sourceTree = "<group>"; };
+		93DB851F2551902600C103D8 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		E341FE6666C5C56A013F86FD /* Pods-RunningGoals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningGoals.debug.xcconfig"; path = "Target Support Files/Pods-RunningGoals/Pods-RunningGoals.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -230,6 +232,7 @@
 		939218E025430BB600E5ADE9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				93DB851F2551902600C103D8 /* Activity.swift */,
 				939218E125430BC000E5ADE9 /* Goal.swift */,
 			);
 			path = Models;
@@ -375,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93DB85202551902700C103D8 /* Activity.swift in Sources */,
 				939D113525481528000A1E99 /* TabContainerViewModel.swift in Sources */,
 				939D112F2547346D000A1E99 /* AuthPublisher.swift in Sources */,
 				939D114F2549A611000A1E99 /* SettingsItemViewModel.swift in Sources */,

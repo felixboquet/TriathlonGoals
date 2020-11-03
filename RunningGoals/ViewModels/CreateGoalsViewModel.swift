@@ -73,7 +73,8 @@ final class CreateGoalsViewModel: ObservableObject {
             time: (durationText as NSString).integerValue,
             unit: unit,
             userId: userId,
-            startDate: Date()
+            startDate: Date(),
+            activities: []
         )
         
         return goalService.create(goal).eraseToAnyPublisher()

@@ -16,4 +16,5 @@ struct Goal: Codable {
     let unit: String
     let userId: String
     let startDate: Date
+    let activities: [Activity]
 }

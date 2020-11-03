@@ -17,8 +17,10 @@ struct GoalItemView: View {
     
     var titleRow: some View {
         HStack {
-            Text(viewModel.title)
-                .font(.system(size: 24, weight: .bold))
+            Image(viewModel.iconName)
+                .resizable()
+                .frame(width: 32, height: 32)
+                .foregroundColor(.primary)
             Spacer()
             Image(systemName: "trash").onTapGesture {
                 viewModel.tappedDelete()

@@ -3,7 +3,7 @@
 //  RunningGoals
 //
 //  Created by Féfé on 22/10/2020.
-//
+// Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 
 import SwiftUI
 import Firebase

@@ -29,6 +29,28 @@ struct GoalItemViewModel: Identifiable {
         goal.activity.capitalized
     }
     
+    var iconName: String {
+        
+        let activityType = ActivityType(rawValue: goal.activity)
+        
+        switch activityType {
+        case .run:
+            return "run"
+        case .bike:
+            return "bike"
+        case .swim:
+            return "swim"
+        default:
+            return ""
+        }
+    }
+    
+    enum ActivityType: String {
+        case run = "Course à pieds"
+        case bike = "Vélo"
+        case swim = "Natation"
+    }
+    
     var progressCircleViewModel: ProgressCircleViewModel {
         let percentage = Double(currentDistance) / Double(totalDistanceValue)
             

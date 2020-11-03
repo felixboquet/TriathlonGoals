@@ -31,7 +31,7 @@ struct GoalItemView: View {
     var distanceRow: some View {
         HStack {
             ProgressCircleView(viewModel: viewModel.progressCircleViewModel)
-                .padding(.vertical, 24)
+                .padding(16)
         }
     }
     
@@ -55,5 +55,23 @@ struct GoalItemView: View {
                 .cornerRadius(5)
         )
         
+    }
+}
+
+struct GoalItemView_Previews: PreviewProvider {
+    static var previews: some View {
+        GoalItemView(viewModel:
+                        .init(
+                            .init(
+                                id: "1",
+                                activity: "Vélo",
+                                distance: 10.0,
+                                time: 30,
+                                unit: "Jours",
+                                userId: "2",
+                                startDate: Date()
+                            )
+                        ) { _ in }
+        )
     }
 }

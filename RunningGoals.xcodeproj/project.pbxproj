@@ -22,7 +22,6 @@
 		939218B82541BDA900E5ADE9 /* PrimaryTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218B72541BDA900E5ADE9 /* PrimaryTextFieldStyle.swift */; };
 		939218BC2541C61F00E5ADE9 /* PrimaryTextFieldProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218BB2541C61F00E5ADE9 /* PrimaryTextFieldProtocol.swift */; };
 		939218BF2541C66E00E5ADE9 /* PrimaryTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218BE2541C66E00E5ADE9 /* PrimaryTextFieldView.swift */; };
-		939218C32542B15300E5ADE9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 939218C22542B15300E5ADE9 /* GoogleService-Info.plist */; };
 		939218DE2542BDDE00E5ADE9 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218DD2542BDDE00E5ADE9 /* UserService.swift */; };
 		939218E225430BC000E5ADE9 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218E125430BC000E5ADE9 /* Goal.swift */; };
 		939218E625430D8000E5ADE9 /* GoalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939218E525430D8000E5ADE9 /* GoalService.swift */; };
@@ -45,6 +44,7 @@
 		93DB8519255137B000C103D8 /* ProgressCircleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB8518255137B000C103D8 /* ProgressCircleViewModel.swift */; };
 		93DB851C25514C8600C103D8 /* GoalItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB851B25514C8600C103D8 /* GoalItemView.swift */; };
 		93DB85202551902700C103D8 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB851F2551902600C103D8 /* Activity.swift */; };
+		93DB85252551D27B00C103D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93DB85242551D27B00C103D8 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,7 +66,6 @@
 		939218B72541BDA900E5ADE9 /* PrimaryTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextFieldStyle.swift; sourceTree = "<group>"; };
 		939218BB2541C61F00E5ADE9 /* PrimaryTextFieldProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextFieldProtocol.swift; sourceTree = "<group>"; };
 		939218BE2541C66E00E5ADE9 /* PrimaryTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextFieldView.swift; sourceTree = "<group>"; };
-		939218C22542B15300E5ADE9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Users/fefe/Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		939218DD2542BDDE00E5ADE9 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		939218E125430BC000E5ADE9 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		939218E525430D8000E5ADE9 /* GoalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalService.swift; sourceTree = "<group>"; };
@@ -89,6 +88,7 @@
 		93DB8518255137B000C103D8 /* ProgressCircleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleViewModel.swift; sourceTree = "<group>"; };
 		93DB851B25514C8600C103D8 /* GoalItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalItemView.swift; sourceTree = "<group>"; };
 		93DB851F2551902600C103D8 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		93DB85242551D27B00C103D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E341FE6666C5C56A013F86FD /* Pods-RunningGoals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningGoals.debug.xcconfig"; path = "Target Support Files/Pods-RunningGoals/Pods-RunningGoals.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,8 +141,8 @@
 				9392189B254175A300E5ADE9 /* ViewModels */,
 				93921898254170EF00E5ADE9 /* Views */,
 				939218812541657300E5ADE9 /* RunningGoalsApp.swift */,
+				93DB85242551D27B00C103D8 /* GoogleService-Info.plist */,
 				939218852541657500E5ADE9 /* Assets.xcassets */,
-				939218C22542B15300E5ADE9 /* GoogleService-Info.plist */,
 				9392188A2541657500E5ADE9 /* Info.plist */,
 				939218872541657500E5ADE9 /* Preview Content */,
 			);
@@ -325,7 +325,7 @@
 			files = (
 				939218892541657500E5ADE9 /* Preview Assets.xcassets in Resources */,
 				939218862541657500E5ADE9 /* Assets.xcassets in Resources */,
-				939218C32542B15300E5ADE9 /* GoogleService-Info.plist in Resources */,
+				93DB85252551D27B00C103D8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

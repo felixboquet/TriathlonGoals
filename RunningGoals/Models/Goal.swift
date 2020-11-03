@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
-
-struct Goal: Codable, Hashable {
+struct Goal: Codable {
+    @DocumentID var id: String?
     let activity: String
     let distance: Float
     let time: Int

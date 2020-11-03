@@ -68,7 +68,34 @@ final class GoalsListViewModel: ObservableObject {
                 me.isLoading = false
                 me.error = nil
                 me.showingCreateModal = false
-                me.itemViewModels = goals.map { .init($0) }
+                me.itemViewModels = goals.map {
+                    .init($0) { [weak self] id in
+                        self?.deleteGoal(id)
+                    } }
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func deleteGoal(_ goalId: String) {
+        goalService.deleteGoal(goalId)
+            .sink { [weak self] completion in
+                
+                guard let me = self else {
+                    return
+                }
+                
+                switch completion {
+                case let .failure(error):
+                    me.error = error
+                case .finished:
+                    break
+                }
+                
+            } receiveValue: { [weak self] _ in
+                guard let me = self else {
+                    return
+                }
+                me.error = nil
             }
             .store(in: &cancellables)
     }

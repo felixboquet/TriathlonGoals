@@ -7,13 +7,22 @@
 
 import Foundation
 
-struct GoalItemViewModel: Hashable {
+struct GoalItemViewModel: Identifiable {
     
     private let goal: Goal
     private let currentDistance = 70.5
+    private let onDelete: (String) -> Void
     
-    init(_ goal: Goal) {
+    init(
+        _ goal: Goal,
+        onDelete: @escaping (String) -> Void
+    ) {
         self.goal = goal
+        self.onDelete = onDelete
+    }
+    
+    var id: String {
+        goal.id ?? ""
     }
     
     var title: String {
@@ -62,5 +71,11 @@ struct GoalItemViewModel: Hashable {
     
     private var isComplete: Bool {
         Float(currentDistance) >= totalDistanceValue
+    }
+    
+    func tappedDelete() {
+        if let id = goal.id {
+            onDelete(id)
+        }
     }
 }

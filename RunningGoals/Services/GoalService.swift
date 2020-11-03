@@ -12,6 +12,7 @@ import FirebaseFirestoreSwift
 protocol GoalServiceProtocol {
     func create(_ goal: Goal) -> AnyPublisher<Void, GoalsError>
     func observeGoals(userId: UserId) -> AnyPublisher<[Goal], GoalsError>
+    func deleteGoal(_ goalId: String) -> AnyPublisher<Void, GoalsError>
 }
 
 final class GoalService: GoalServiceProtocol {
@@ -47,6 +48,18 @@ final class GoalService: GoalServiceProtocol {
                     return Fail(error: .default(description: "Parsing error")).eraseToAnyPublisher()
                 }
             }.eraseToAnyPublisher()
+    }
+    
+    func deleteGoal(_ goalId: String) -> AnyPublisher<Void, GoalsError> {
+        return Future<Void, GoalsError> { promise in
+            self.db.collection("goals").document(goalId).delete { error in
+                if let error = error {
+                    promise(.failure(.default(description: error.localizedDescription)))
+                } else {
+                    promise(.success(()))
+                }
+            }
+        }.eraseToAnyPublisher()
     }
     
 }

@@ -35,7 +35,7 @@ struct GoalsListView: View {
         ScrollView {
             VStack {
                 LazyVGrid(columns: [.init(.flexible(), spacing: 16), .init(.flexible())], spacing: 16) {
-                    ForEach(viewModel.itemViewModels, id: \.self) { viewModel in
+                    ForEach(viewModel.itemViewModels, id: \.id) { viewModel in
                         GoalItemView(viewModel: viewModel)
                     }
                 }
@@ -53,58 +53,5 @@ struct GoalsListView: View {
             Image(systemName: "plus.circle").imageScale(.large)
         })
         .navigationTitle(viewModel.navigationTitle)
-    }
-}
-
-struct GoalItemView: View {
-    
-    private let viewModel: GoalItemViewModel
-    
-    init(viewModel: GoalItemViewModel) {
-        self.viewModel = viewModel
-    }
-    
-    var titleRow: some View {
-        HStack {
-            Text(viewModel.title)
-                .font(.system(size: 24, weight: .bold))
-            Spacer()
-            Image(systemName: "trash")
-        }
-    }
-    
-    var distanceRow: some View {
-        HStack {
-//            ProgressView(viewModel.statusText, value: viewModel.currentDistanceValue, total: viewModel.totalDistanceValue)
-//                .font(.system(size: 12, weight: .semibold))
-//                .padding(18)
-            ProgressCircleView(viewModel: viewModel.progressCircleViewModel)
-                .padding(.vertical, 24)
-        }
-    }
-    
-    var remainingDaysRow: some View {
-        HStack {
-            Text(viewModel.remainingDaysText)
-        }
-    }
-    
-    var body: some View {
-        HStack {
-            VStack {
-                titleRow
-//                Text(viewModel.statusText)
-//                    .font(.system(size: 12, weight: .semibold))
-//                    .padding(18)
-                distanceRow
-                remainingDaysRow
-            }.padding()
-        }
-        .background(
-            Rectangle()
-                .fill(Color.primaryButton)
-                .cornerRadius(5)
-        )
-        
     }
 }

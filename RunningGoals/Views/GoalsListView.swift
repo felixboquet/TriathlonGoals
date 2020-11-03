@@ -75,9 +75,11 @@ struct GoalItemView: View {
     
     var distanceRow: some View {
         HStack {
-            ProgressView(viewModel.statusText, value: viewModel.currentDistanceValue, total: viewModel.totalDistanceValue)
-                .font(.system(size: 12, weight: .semibold))
-                .padding(18)
+//            ProgressView(viewModel.statusText, value: viewModel.currentDistanceValue, total: viewModel.totalDistanceValue)
+//                .font(.system(size: 12, weight: .semibold))
+//                .padding(18)
+            ProgressCircleView(viewModel: viewModel.progressCircleViewModel)
+                .padding(.vertical, 24)
         }
     }
     

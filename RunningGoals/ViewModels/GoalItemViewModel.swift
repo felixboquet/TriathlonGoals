@@ -10,7 +10,7 @@ import Foundation
 struct GoalItemViewModel: Hashable {
     
     private let goal: Goal
-    private let currentDistance = 10.5
+    private let currentDistance = 70.5
     
     init(_ goal: Goal) {
         self.goal = goal
@@ -18,6 +18,12 @@ struct GoalItemViewModel: Hashable {
     
     var title: String {
         goal.activity.capitalized
+    }
+    
+    var progressCircleViewModel: ProgressCircleViewModel {
+        let percentage = Double(currentDistance) / Double(totalDistanceValue)
+            
+        return .init(title: statusText, percentageComplete: percentage)
     }
     
     var statusText: String {

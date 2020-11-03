@@ -41,6 +41,8 @@
 		93DB84F42550145500C103D8 /* LoginSignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB84F32550145500C103D8 /* LoginSignupView.swift */; };
 		93DB84F7255014A300C103D8 /* LoginSignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB84F6255014A300C103D8 /* LoginSignupViewModel.swift */; };
 		93DB85112550225800C103D8 /* TextFieldCustomRoundedStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB85102550225800C103D8 /* TextFieldCustomRoundedStyle.swift */; };
+		93DB85162551373100C103D8 /* ProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB85152551373100C103D8 /* ProgressCircleView.swift */; };
+		93DB8519255137B000C103D8 /* ProgressCircleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB8518255137B000C103D8 /* ProgressCircleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +83,8 @@
 		93DB84F32550145500C103D8 /* LoginSignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupView.swift; sourceTree = "<group>"; };
 		93DB84F6255014A300C103D8 /* LoginSignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupViewModel.swift; sourceTree = "<group>"; };
 		93DB85102550225800C103D8 /* TextFieldCustomRoundedStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCustomRoundedStyle.swift; sourceTree = "<group>"; };
+		93DB85152551373100C103D8 /* ProgressCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleView.swift; sourceTree = "<group>"; };
+		93DB8518255137B000C103D8 /* ProgressCircleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleViewModel.swift; sourceTree = "<group>"; };
 		E341FE6666C5C56A013F86FD /* Pods-RunningGoals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningGoals.debug.xcconfig"; path = "Target Support Files/Pods-RunningGoals/Pods-RunningGoals.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,6 +182,7 @@
 			children = (
 				939218A125417A6000E5ADE9 /* DropDownView.swift */,
 				939218BE2541C66E00E5ADE9 /* PrimaryTextFieldView.swift */,
+				93DB85152551373100C103D8 /* ProgressCircleView.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 				939D114E2549A611000A1E99 /* SettingsItemViewModel.swift */,
 				939D114B2549A24D000A1E99 /* SettingsViewModel.swift */,
 				939D113425481528000A1E99 /* TabContainerViewModel.swift */,
+				93DB8518255137B000C103D8 /* ProgressCircleViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -377,7 +383,9 @@
 				93DB85112550225800C103D8 /* TextFieldCustomRoundedStyle.swift in Sources */,
 				939218AC2541A09000E5ADE9 /* DropdownItemProtocol.swift in Sources */,
 				939D1138254832F3000A1E99 /* GoalsListView.swift in Sources */,
+				93DB8519255137B000C103D8 /* ProgressCircleViewModel.swift in Sources */,
 				939D11492549A23A000A1E99 /* SettingsView.swift in Sources */,
+				93DB85162551373100C103D8 /* ProgressCircleView.swift in Sources */,
 				939D114C2549A24D000A1E99 /* SettingsViewModel.swift in Sources */,
 				939D11322548108E000A1E99 /* TabContainerView.swift in Sources */,
 				939218A925418E8E00E5ADE9 /* CreateGoalsViewModel.swift in Sources */,

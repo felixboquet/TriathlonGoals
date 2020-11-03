@@ -10,7 +10,7 @@ import Foundation
 struct GoalItemViewModel: Identifiable {
     
     private let goal: Goal
-    private let currentDistance = 70.5
+    private let currentDistance = 22.5
     private let onDelete: (String) -> Void
     
     init(

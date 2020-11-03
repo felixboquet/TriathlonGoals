@@ -36,7 +36,7 @@ final class GoalService: GoalServiceProtocol {
     }
     
     func observeGoals(userId: UserId) -> AnyPublisher<[Goal], GoalsError> {
-        let query = db.collection("goals").whereField("userId", isEqualTo: userId)
+        let query = db.collection("goals").whereField("userId", isEqualTo: userId).order(by: "startDate", descending: true)
         return Publishers.QuerySnapshotPublisher(query: query)
             .flatMap { snapShot -> AnyPublisher<[Goal], GoalsError> in
                 do {

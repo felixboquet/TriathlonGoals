@@ -45,6 +45,7 @@
 		93DB851C25514C8600C103D8 /* GoalItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB851B25514C8600C103D8 /* GoalItemView.swift */; };
 		93DB85202551902700C103D8 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB851F2551902600C103D8 /* Activity.swift */; };
 		93DB85252551D27B00C103D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93DB85242551D27B00C103D8 /* GoogleService-Info.plist */; };
+		93DB85282551D35900C103D8 /* ActivitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB85272551D35900C103D8 /* ActivitiesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		93DB851B25514C8600C103D8 /* GoalItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalItemView.swift; sourceTree = "<group>"; };
 		93DB851F2551902600C103D8 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		93DB85242551D27B00C103D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		93DB85272551D35900C103D8 /* ActivitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesView.swift; sourceTree = "<group>"; };
 		E341FE6666C5C56A013F86FD /* Pods-RunningGoals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningGoals.debug.xcconfig"; path = "Target Support Files/Pods-RunningGoals/Pods-RunningGoals.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,7 +170,9 @@
 		93921898254170EF00E5ADE9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				93DB85272551D35900C103D8 /* ActivitiesView.swift */,
 				9392189D254177EC00E5ADE9 /* CreateGoalsView.swift */,
+				93DB851B25514C8600C103D8 /* GoalItemView.swift */,
 				939D1137254832F3000A1E99 /* GoalsListView.swift */,
 				939218832541657300E5ADE9 /* LandingView.swift */,
 				93DB84F32550145500C103D8 /* LoginSignupView.swift */,
@@ -177,7 +181,6 @@
 				939D11312548108E000A1E99 /* TabContainerView.swift */,
 				939218B62541BD9600E5ADE9 /* Styles */,
 				93921899254170F500E5ADE9 /* Widgets */,
-				93DB851B25514C8600C103D8 /* GoalItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				939D114C2549A24D000A1E99 /* SettingsViewModel.swift in Sources */,
 				939D11322548108E000A1E99 /* TabContainerView.swift in Sources */,
 				939218A925418E8E00E5ADE9 /* CreateGoalsViewModel.swift in Sources */,
+				93DB85282551D35900C103D8 /* ActivitiesView.swift in Sources */,
 				939218E625430D8000E5ADE9 /* GoalService.swift in Sources */,
 				939D114425485D8D000A1E99 /* GoalItemViewModel.swift in Sources */,
 				939D1154254AD5D3000A1E99 /* LandingViewModel.swift in Sources */,

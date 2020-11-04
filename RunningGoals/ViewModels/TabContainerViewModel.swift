@@ -12,9 +12,9 @@ final class TabContainerViewModel: ObservableObject {
     @Published var selectedTab: TabItemViewModel.TabItemType = .goalsList
     
     let tabItemViewModel = [
-        TabItemViewModel(imageName: "book", title: "Activity Log", type: .log),
-        .init(imageName: "list.bullet", title: "Goals", type: .goalsList),
-        .init(imageName: "gear", title: "Settings", type: .settings)
+        TabItemViewModel(imageName: "book", title: "Activités", type: .log),
+        .init(imageName: "list.bullet", title: "Objectifs", type: .goalsList),
+        .init(imageName: "gear", title: "Paramètres", type: .settings)
     ]
 }
 

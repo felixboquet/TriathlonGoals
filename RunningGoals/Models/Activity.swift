@@ -5,10 +5,11 @@
 //  Created by Féfé on 03/11/2020.
 //
 
-import Foundation
+import FirebaseFirestoreSwift
 
 struct Activity: Codable {
+    @DocumentID var id: String?
     let date: Date
-    let isComplete: Bool
     let distance: Float
+    let goals: [String]
 }

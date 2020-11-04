@@ -69,7 +69,8 @@ struct GoalItemView_Previews: PreviewProvider {
                                 time: 30,
                                 unit: "Jours",
                                 userId: "2",
-                                startDate: Date()
+                                startDate: Date(),
+                                activities: []
                             )
                         ) { _ in }
         )

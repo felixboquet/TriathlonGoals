@@ -13,6 +13,7 @@ protocol GoalServiceProtocol {
     func create(_ goal: Goal) -> AnyPublisher<Void, GoalsError>
     func observeGoals(userId: UserId) -> AnyPublisher<[Goal], GoalsError>
     func deleteGoal(_ goalId: String) -> AnyPublisher<Void, GoalsError>
+    func addActivitiesToGoal(_ goalId: String, activities: [Activity]) -> AnyPublisher<Void, GoalsError>
 }
 
 final class GoalService: GoalServiceProtocol {
@@ -53,6 +54,22 @@ final class GoalService: GoalServiceProtocol {
     func deleteGoal(_ goalId: String) -> AnyPublisher<Void, GoalsError> {
         return Future<Void, GoalsError> { promise in
             self.db.collection("goals").document(goalId).delete { error in
+                if let error = error {
+                    promise(.failure(.default(description: error.localizedDescription)))
+                } else {
+                    promise(.success(()))
+                }
+            }
+        }.eraseToAnyPublisher()
+    }
+    
+    func addActivitiesToGoal(_ goalId: String, activities: [Activity]) -> AnyPublisher<Void, GoalsError> {
+        return Future<Void, GoalsError> { promise in
+            self.db.collection("goals").document(goalId).updateData(
+                ["activities": activities.map {
+                    return [$0.id]
+                }]
+            ) { error in
                 if let error = error {
                     promise(.failure(.default(description: error.localizedDescription)))
                 } else {
